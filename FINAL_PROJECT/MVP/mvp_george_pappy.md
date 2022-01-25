@@ -6,7 +6,7 @@ Using raw data consisting of 224,316 chest X-rays of 65,240 patients performed b
 
 The Area Under the Receiver Operating Curve (AUROC) plot shown below indicates the predictive performance observed with the latest model developed (comparing held-out Validation set data to Traning set data; Test set data has not yet been touched and will not be until final model selection). Note that the model has 4 separate and non-mututally-exclusive targets (the 4 diagnoses identified above), making this a multi-label classifier. Essentially, we are trying to use just one model to simultanously identify the possible presence of up to four different diagnoses:
 
-![PreliminaryAUROC_Curves](../Deep_Learning_Project_Official/mvp_george_pappy/PreliminaryAUROC_Curves.png)
+![PreliminaryAUROC_Curves](../MVP/mvp_george_pappy/PreliminaryAUROC_Curves.png)
 
 Clearly, current performance (based on using a VGG16 model pre-trained on the ImageNet dataset followed by a several-layer trainable Convolutional Neural Network) is not particulary impressive, but further tuning experiments are underway (including using dropout between the trainable layers for regularization, allowing some of the last VGG16 layers to be trained, and substituting other pre-trained models such as DenseNet121 for VGG16). Moreover, experiments are underway to use a custom per-class-weighted loss function since all 4 of the diagnoses constitute imbalanced classification problems.
 
